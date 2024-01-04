@@ -38,6 +38,7 @@ mod test {
             .collect::<HashSet<_>>()
             .into_iter()
             .collect::<Vec<_>>();
+        // VERY IMPORTANT: sort vec
         bubble_sort(&mut vec);
 
         // An item inside the vector.
