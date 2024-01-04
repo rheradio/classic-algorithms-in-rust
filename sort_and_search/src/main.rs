@@ -1,9 +1,11 @@
 mod sort;
 use sort::bubble_sort::bubble_sort;
 
+mod search;
 mod testing_functions;
-use testing_functions::generate_random_vector::{get_i32, make_random_vec};
+
 use testing_functions::check_sort_algorithm::{check_sorted, print_vec};
+use testing_functions::generate_random_vector::{get_i32, make_random_vec};
 
 fn main() {
     let num_items = get_i32("Number of items?");

@@ -21,12 +21,13 @@ pub fn print_vec(vec: &Vec<i32>, num_items: i32) {
 }
 
 // Verify that the Vec is sorted.
-pub fn check_sorted(vec: &Vec<i32>) {
+pub fn check_sorted(vec: &Vec<i32>) -> bool {
     for i in 0..(vec.len() - 1) {
         if vec[i] > vec[i + 1] {
             println!("The vector is NOT sorted");
-            return;
+            return false;
         }
     }
     println!("The vector is sorted");
+    true
 }
