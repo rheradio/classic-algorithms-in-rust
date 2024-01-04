@@ -4,8 +4,8 @@ use generate_random_vector::{get_i32, make_random_vec};
 mod test_algorithm;
 use test_algorithm::{check_sorted, print_vec};
 
-mod sort;
-use sort::bubble_sort;
+mod bubble_sort;
+use bubble_sort::bubble_sort;
 
 fn main() {
     let num_items = get_i32("Number of items?");
