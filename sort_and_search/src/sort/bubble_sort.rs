@@ -1,3 +1,7 @@
+// O(log_2 n)
+// Watch https://www.youtube.com/watch?v=M4ubFru2O80
+
+
 pub fn bubble_sort(vec: &mut Vec<i32>) {
     let mut swapped = true;
     while swapped {
