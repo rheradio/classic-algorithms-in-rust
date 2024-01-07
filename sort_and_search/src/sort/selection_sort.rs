@@ -4,7 +4,7 @@
 pub fn selection_sort(vec: &mut Vec<i32>) {
     let n = vec.len();
     let mut min_pos: usize;
-    for i in 0..n-1 {
+    for i in 0..n - 1 {
         min_pos = i;
         for j in (i + 1)..n {
             if vec[j] < vec[min_pos] {
@@ -15,13 +15,12 @@ pub fn selection_sort(vec: &mut Vec<i32>) {
     }
 }
 
-
 #[cfg(test)]
 mod test {
+    use super::*;
     use crate::sort::selection_sort::selection_sort;
     use crate::testing_functions::check_sort_algorithm::{check_sorted, print_vec};
     use crate::testing_functions::generate_random_vector::make_random_vec;
-    use super::*;
 
     #[test]
     fn test_selection_sort() {

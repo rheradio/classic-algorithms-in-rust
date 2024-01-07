@@ -1,7 +1,6 @@
 // O(log_2 n)
 // Watch https://www.youtube.com/watch?v=M4ubFru2O80
 
-
 pub fn bubble_sort(vec: &mut Vec<i32>) {
     let mut swapped = true;
     while swapped {
@@ -15,12 +14,11 @@ pub fn bubble_sort(vec: &mut Vec<i32>) {
     }
 }
 
-
 #[cfg(test)]
 mod test {
+    use super::*;
     use crate::testing_functions::check_sort_algorithm::{check_sorted, print_vec};
     use crate::testing_functions::generate_random_vector::make_random_vec;
-    use super::*;
 
     #[test]
     fn test_bubble_sort() {

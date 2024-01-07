@@ -47,9 +47,7 @@ mod test {
         let (found_pos, num_tests) = binary_search(&mut vec, item);
         let pos_as_i32: i32 = pos.try_into().unwrap();
         assert_eq!(found_pos, pos_as_i32);
-        let max_predicted_tests: i32 = (vec.len() as f32)
-            .log2()
-            .ceil() as i32;
+        let max_predicted_tests: i32 = (vec.len() as f32).log2().ceil() as i32;
         assert!(num_tests <= max_predicted_tests);
 
         // An item outside the vector.
