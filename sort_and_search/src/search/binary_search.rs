@@ -1,7 +1,7 @@
 // Perform binary search.
 // Return the target's location in the vector and the number of tests.
 // If the item is not found, return -1 and the number of tests.
-fn binary_search(vec: &Vec<i32>, target: i32) -> (i32, i32) {
+fn binary_search(vec: &[i32], target: i32) -> (i32, i32) {
     let mut low = 0;
     let mut high = vec.len() - 1;
     let mut num_tests = 0;
