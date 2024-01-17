@@ -1,6 +1,6 @@
 // Return the target's location in the vector and the number of tests.
 // If the item is not found, return -1 and the number of tests.
-fn linear_search(vec: &Vec<i32>, target: i32) -> (i32, i32) {
+fn linear_search(vec: &[i32], target: i32) -> (i32, i32) {
     for (pos, item) in vec.iter().enumerate() {
         if *item == target {
             let pos: i32 = pos.try_into().unwrap();

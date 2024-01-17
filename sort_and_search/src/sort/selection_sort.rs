@@ -1,7 +1,7 @@
 // See Chapter 2 in Aditya Y Bhargava. Grokking Algorithms: An illustrated guide for programmers
 // and other curious people. Manning Publications Co., 2nd. Ed., 2024.
 // O(n^2)
-pub fn selection_sort(vec: &mut Vec<i32>) {
+pub fn selection_sort(vec: &mut [i32]) {
     let n = vec.len();
     let mut min_pos: usize;
     for i in 0..n - 1 {

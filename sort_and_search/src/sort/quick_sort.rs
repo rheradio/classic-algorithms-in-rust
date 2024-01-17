@@ -1,6 +1,6 @@
 // Lomuto partition scheme
 // https://en.wikipedia.org/wiki/Quicksort#Lomuto_partition_scheme
-fn partition(vec: &mut Vec<i32>, low: usize, high: usize) -> usize {
+fn partition(vec: &mut [i32], low: usize, high: usize) -> usize {
     // Choose the last element as the pivot
     let pivot: i32 = vec[high];
 

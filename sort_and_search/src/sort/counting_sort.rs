@@ -1,4 +1,4 @@
-pub fn counting_sort(vec: &mut Vec<i32>) {
+pub fn counting_sort(vec: &mut [i32]) {
 
     // Make a copy of vec and get its max value
     let n = vec.len();
@@ -12,15 +12,17 @@ pub fn counting_sort(vec: &mut Vec<i32>) {
     }
     max += 1;
 
+    let max = max as usize;
+
     // Count the number of occurrences of each digit in aux_vec
-    let mut counts = vec![0; max as usize];
+    let mut counts = vec![0; max];
     for i in 0..n {
         counts[aux_vec[i] as usize] += 1;
     }
     // counts[i] is the value of the number of elements in aux_vec equal to i
 
     // Change counts to show the cumulative number of digit occurrences
-    for i in 1..max as usize {
+    for i in 1..max {
         counts[i] = counts[i] + counts[i-1];
     }
     // Counts now have the number of elements <= i
