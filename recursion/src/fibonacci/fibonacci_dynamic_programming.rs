@@ -1,24 +1,17 @@
 use crate::fibonacci::fibonacci::fibonacci;
 
 pub fn fibonacci_dynamic_programming(n: u64) -> u64 {
-    if n <= 1 {
-        return n;
-    } else {
-        let mut memoized_values: Vec<u64> = vec!(0, 1);
-        return fibonacci_on_the_fly(&mut memoized_values, n);
-    }
+    let mut memoized_values: Vec<u64> = vec![0, 1];
+    return fibonacci_on_the_fly(&mut memoized_values, n);
+
     fn fibonacci_on_the_fly(memoized_values: &mut Vec<u64>, n: u64) -> u64 {
-        let last_computed = memoized_values.len() - 1;
-        let n1: usize = (n - 1) as usize;
-        let n2: usize = (n - 2) as usize;
-        let result: u64;
-        if last_computed == n1 {
-            result = memoized_values[n1] + memoized_values[n2];
-        } else {
-            result = fibonacci_on_the_fly(memoized_values, n - 1) + memoized_values[n2];
+        let n_as_usize: usize = n as usize;
+        if n_as_usize >=  memoized_values.len() {
+            let fib_minus_1 = fibonacci_on_the_fly(memoized_values, n - 1);
+            let fib_minus_2 = fibonacci_on_the_fly(memoized_values, n - 2);
+            memoized_values.push(fib_minus_1 + fib_minus_2);
         }
-        memoized_values.push(result);
-        result
+        memoized_values[n_as_usize]
     }
 }
 
