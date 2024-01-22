@@ -1,7 +1,6 @@
 pub fn factorial(n: u128) -> u128 {
     match n {
-        0 => 1,
-        1 => 1,
+        0|1 => 1,
         _ => n * factorial(n - 1),
     }
 }
