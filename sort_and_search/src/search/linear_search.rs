@@ -1,3 +1,4 @@
+// O(n)
 // Return the target's location in the vector and the number of tests.
 // If the item is not found, return -1 and the number of tests.
 fn linear_search(vec: &[i32], target: i32) -> (i32, i32) {

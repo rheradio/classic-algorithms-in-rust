@@ -1,4 +1,4 @@
-// O(log_2 n)
+// O(n^2)
 // Watch https://www.youtube.com/watch?v=M4ubFru2O80
 
 pub fn bubble_sort(vec: &mut [i32]) {

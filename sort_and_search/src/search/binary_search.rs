@@ -1,3 +1,4 @@
+// O(log_2 n)
 // Perform binary search.
 // Return the target's location in the vector and the number of tests.
 // If the item is not found, return -1 and the number of tests.
