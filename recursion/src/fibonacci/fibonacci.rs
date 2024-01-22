@@ -14,11 +14,10 @@ mod test {
     #[test]
     fn test_fibonacci() {
         assert_eq!(fibonacci(0), 0);
-        assert_eq!(fibonacci(0), 0);
+        assert_eq!(fibonacci(1), 1);
         assert_eq!(fibonacci(10), 55);
         assert_eq!(fibonacci(15), 610);
         assert_eq!(fibonacci(40), 102334155);
-        println!("mamaon");
     }
 }
 
