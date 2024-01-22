@@ -5,6 +5,8 @@
 // stackusage target/release/recursion
 
 mod factorial;
+mod fibonacci;
+
 use factorial::factorial::factorial;
 use factorial::factorial_tail_recursion::factorial_tail_recursion;
 
