@@ -6,6 +6,7 @@
 
 mod factorial;
 mod fibonacci;
+mod knights_tour;
 
 use factorial::factorial::factorial;
 use factorial::factorial_tail_recursion::factorial_tail_recursion;
