@@ -1,6 +1,6 @@
 # Classic Algorithms in Rust
 
-## *Implementing some classic algorithms in Rust*
+Implementing some classic algorithms in Rust for learning purposes:
 
 | Algorithm                                                                                                                                        | Why is it interesting?         |
 |--------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------|
