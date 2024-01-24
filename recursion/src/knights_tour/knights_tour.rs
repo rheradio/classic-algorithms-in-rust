@@ -1,7 +1,7 @@
 use std::time::{Instant};
 
-// The board dimensions.
-const NUM_ROWS: usize = 5;
+// The board dimensions
+const NUM_ROWS: usize = 7;
 const NUM_COLS: usize = NUM_ROWS;
 const INUM_ROWS: i32 = NUM_ROWS as i32;
 const INUM_COLS: i32 = NUM_COLS as i32;
@@ -16,15 +16,15 @@ pub enum Square {
 }
 use Square::*;
 
-// Whether we want an open or closed tour.
+// Whether we want an open or closed tour
 const REQUIRE_CLOSED_TOUR: bool = false;
 
-// Function that takes a board array as input and prints the board.
+// Function that takes a board array as input and prints the board
 pub fn dump_board(board: &mut [[Square;NUM_COLS]; NUM_ROWS]) {
     for i in 0..NUM_ROWS {
         for j in 0..NUM_COLS {
             match board[i][j] {
-                // Check https://doc.rust-lang.org/std/fmt/index.html#usage for formatting options.
+                // Check https://doc.rust-lang.org/std/fmt/index.html#usage for formatting options
                 Visited(n) => print!("{:3}",n),
                 Unvisited => print!("  □")
             };
@@ -33,28 +33,28 @@ pub fn dump_board(board: &mut [[Square;NUM_COLS]; NUM_ROWS]) {
     }
 }
 
-// Function that tries to extend a knight's tour starting at (start_row, start_col).
-// Return true or false to indicate whether we have found a solution.
+// Function that tries to extend a knight's tour starting at (start_row, start_col)
+// Return true or false to indicate whether we have found a solution
 fn find_tour(board: &mut [[Square; NUM_COLS]; NUM_ROWS],
-             offsets: &[(i32, i32); 8],    // 8 possible moves, 2 coordinates each.
+             offsets: &[(i32, i32); 8],    // 8 possible moves, 2 coordinates each
              cur_row: usize, cur_col: usize,
              num_visited: i32) -> bool {
 
     let (mut next_row, mut next_col): (i32, i32);
 
-    if num_visited == INUM_ROWS*INUM_COLS { // Base case
+    if num_visited == INUM_ROWS*INUM_COLS { // Base case (all the squares have been visited)
         if REQUIRE_CLOSED_TOUR {
             // Check if any of the allowed movements place us at the
             // starting point (0, 0);
             for (x, y) in offsets {
                 (next_row, next_col) = (cur_row as i32 + *x, cur_row as i32 + *y);
-                if (next_row, next_col) == (0, 0) {
+                if (next_row as usize, next_col as usize) == START_POSITION {
                     return true
                 }
             }
             return false;
         } else {
-            // If we allow open tours, we have reached a valid solution.
+            // If we allow open tours, we have reached a valid solution
             return true
         }
     } else { // Recursive case
@@ -72,7 +72,7 @@ fn find_tour(board: &mut [[Square; NUM_COLS]; NUM_ROWS],
                 }
             }
         }
-        return false
+        return false // Base case (no more movements)
     }
 }
 
