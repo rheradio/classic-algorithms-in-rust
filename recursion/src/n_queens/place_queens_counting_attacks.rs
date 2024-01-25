@@ -1,7 +1,7 @@
 use crate::n_queens::board_set_and_check::*;
 
 // Add amount to the attack counts for this square.
-fn adjust_attack_counts(
+pub fn adjust_attack_counts(
     num_attacking: &mut [[i32; NUM_COLS]; NUM_ROWS],
     r: i32,
     c: i32,
