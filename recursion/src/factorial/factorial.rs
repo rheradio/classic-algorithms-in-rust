@@ -1,10 +1,9 @@
 pub fn factorial(n: u128) -> u128 {
     match n {
-        0|1 => 1,
+        0 | 1 => 1,
         _ => n * factorial(n - 1),
     }
 }
-
 
 #[cfg(test)]
 mod test {
@@ -17,4 +16,3 @@ mod test {
         assert_eq!(factorial(10), 3628800);
     }
 }
-

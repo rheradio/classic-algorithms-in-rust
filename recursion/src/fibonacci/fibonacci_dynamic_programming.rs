@@ -6,7 +6,7 @@ pub fn fibonacci_dynamic_programming(n: u64) -> u64 {
 
     fn fibonacci_on_the_fly(memoized_values: &mut Vec<u64>, n: u64) -> u64 {
         let n_as_usize: usize = n as usize;
-        if n_as_usize >=  memoized_values.len() {
+        if n_as_usize >= memoized_values.len() {
             let fib_minus_1 = fibonacci_on_the_fly(memoized_values, n - 1);
             let fib_minus_2 = fibonacci_on_the_fly(memoized_values, n - 2);
             memoized_values.push(fib_minus_1 + fib_minus_2);
@@ -14,7 +14,6 @@ pub fn fibonacci_dynamic_programming(n: u64) -> u64 {
         memoized_values[n_as_usize]
     }
 }
-
 
 #[cfg(test)]
 mod test {
@@ -29,4 +28,3 @@ mod test {
         assert_eq!(fibonacci_dynamic_programming(40), 102334155);
     }
 }
-

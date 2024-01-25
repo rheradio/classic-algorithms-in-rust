@@ -2,10 +2,9 @@ pub fn fibonacci(n: u64) -> u64 {
     match n {
         0 => 0,
         1 => 1,
-        n => fibonacci(n-2) + fibonacci(n-1)
+        n => fibonacci(n - 2) + fibonacci(n - 1),
     }
 }
-
 
 #[cfg(test)]
 mod test {
@@ -20,4 +19,3 @@ mod test {
         assert_eq!(fibonacci(40), 102334155);
     }
 }
-

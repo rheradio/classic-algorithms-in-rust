@@ -13,7 +13,6 @@ pub fn factorial_tail_recursion(n: u128) -> u128 {
     factorial_inner(1, n)
 }
 
-
 #[cfg(test)]
 mod test {
     use super::*;
@@ -25,4 +24,3 @@ mod test {
         assert_eq!(factorial_tail_recursion(10), 3628800);
     }
 }
-

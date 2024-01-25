@@ -7,13 +7,14 @@
 mod factorial;
 mod fibonacci;
 mod knights_tour;
+mod n_queens;
 
 use factorial::factorial::factorial;
 use factorial::factorial_tail_recursion::factorial_tail_recursion;
 
 fn main() {
     let mut acc: u128 = 0;
-    for _ in 0 .. 10000{
+    for _ in 0..10000 {
         for i in 0..35 {
             //acc = acc + factorial(i);
             acc = acc + factorial_tail_recursion(i);
