@@ -14,7 +14,7 @@ Implementing some classic algorithms in Rust for learning purposes:
 | [Factorial](https://github.com/rheradio/classic-algorithms-in-rust/tree/main/recursion/src/factorial)                                            | Tail recursion                | [Stephens02] |                  
 | [Fibonacci](https://github.com/rheradio/classic-algorithms-in-rust/tree/main/recursion/src/fibonacci)                                            | Basic recursion, dynamic programming (*memoization*) | [Stephens02] |                   
 | [Knight's tour](https://github.com/rheradio/classic-algorithms-in-rust/blob/main/recursion/src/knights_tour/knights_tour.rs)                     | Recursion, backtracking, matrices & enums in Rust | [Stephens02] | 
-| [N-Queens](https://github.com/rheradio/classic-algorithms-in-rust/tree/main/recursion/src/n_queens)                                              | Recursion, backtracking, heuristics | [Stephens02] | 
+| [N-Queens](https://github.com/rheradio/classic-algorithms-in-rust/tree/main/recursion/src/n_queens)                                              | Recursion, backtracking, importance of solution space reduction | [Stephens02] | 
 
 ## References: 
 
