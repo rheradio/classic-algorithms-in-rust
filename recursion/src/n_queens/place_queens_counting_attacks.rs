@@ -1,7 +1,12 @@
 use crate::n_queens::board_set_and_check::*;
 
 // Add amount to the attack counts for this square.
-fn adjust_attack_counts(num_attacking: &mut [[i32; NUM_COLS]; NUM_ROWS], r: i32, c: i32, amount: i32) {
+fn adjust_attack_counts(
+    num_attacking: &mut [[i32; NUM_COLS]; NUM_ROWS],
+    r: i32,
+    c: i32,
+    amount: i32,
+) {
     // Attacks in the same row.
     for i in 0..INUM_COLS {
         num_attacking[r as usize][i as usize] += amount
@@ -16,8 +21,7 @@ fn adjust_attack_counts(num_attacking: &mut [[i32; NUM_COLS]; NUM_ROWS], r: i32,
     for i in -INUM_ROWS..INUM_ROWS {
         let test_r = r + i;
         let test_c = c + i;
-        if test_r >= 0 && test_r < INUM_ROWS &&
-            test_c >= 0 && test_c < INUM_ROWS {
+        if test_r >= 0 && test_r < INUM_ROWS && test_c >= 0 && test_c < INUM_ROWS {
             num_attacking[test_r as usize][test_c as usize] += amount;
         }
     }
@@ -26,8 +30,7 @@ fn adjust_attack_counts(num_attacking: &mut [[i32; NUM_COLS]; NUM_ROWS], r: i32,
     for i in -INUM_ROWS..INUM_ROWS {
         let test_r = r + i;
         let test_c = c - i;
-        if test_r >= 0 && test_r < INUM_ROWS &&
-            test_c >= 0 && test_c < INUM_ROWS {
+        if test_r >= 0 && test_r < INUM_ROWS && test_c >= 0 && test_c < INUM_ROWS {
             num_attacking[test_r as usize][test_c as usize] += amount;
         }
     }
@@ -44,7 +47,6 @@ pub fn place_queens_counting_attacks(
     r: i32,
     c: i32,
 ) -> bool {
-
     // Make a num_attacking matrix.
     // The value num_attacking[r as usize][c as usize] is the number
     // of queens that can attack square (r, c).
@@ -80,7 +82,6 @@ pub fn place_queens_counting_attacks(
                 next_r += 1;
                 next_c = 0;
             }
-
             if place_queens_counting_attacks_inner(
                 board,
                 next_r,
@@ -108,7 +109,7 @@ pub fn place_queens_counting_attacks(
                     }
                     return queen_try;
                 } else {
-                    return false
+                    return false;
                 }
             }
         } // Recursion case
