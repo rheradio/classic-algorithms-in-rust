@@ -10,6 +10,7 @@ pub fn place_queens_brute_force(board: &mut [[&str; NUM_COLS]; NUM_ROWS], r: i32
     if r == INUM_ROWS {
         // Base case: we have finished examining every position and have
         // fallen off the board
+        // Check if this is a solution
         return board_is_a_solution(board);
     } else {
         // Recursion case: there are two options for square [r][c]:

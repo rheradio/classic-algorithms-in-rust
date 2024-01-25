@@ -1,5 +1,5 @@
 // The board dimensions.
-pub const NUM_ROWS: usize = 5;
+pub const NUM_ROWS: usize = 10;
 pub const NUM_COLS: usize = NUM_ROWS;
 pub const INUM_ROWS: i32 = NUM_ROWS as i32;
 pub const INUM_COLS: i32 = NUM_COLS as i32;

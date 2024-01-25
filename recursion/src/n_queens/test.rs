@@ -2,6 +2,7 @@
 mod test {
     use crate::n_queens::board_set_and_check::*;
     use crate::n_queens::place_queens_brute_force::place_queens_brute_force;
+    use crate::n_queens::place_queens_counting_attacks::place_queens_counting_attacks;
     use std::time::Instant;
 
     #[test]
@@ -10,7 +11,8 @@ mod test {
         let mut board = [[EMPTY_SQUARE; NUM_COLS]; NUM_ROWS];
 
         let start = Instant::now();
-        let success = place_queens_brute_force(&mut board, 0, 0);
+        //let success = place_queens_brute_force(&mut board, 0, 0);
+        let success = place_queens_counting_attacks(&mut board, 0, 0);
         //let success = place_queens_2(& mut board, 0, 0, 0);
         //let success = place_queens_3(& mut board);
         let duration = start.elapsed();
