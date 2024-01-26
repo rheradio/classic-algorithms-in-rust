@@ -1,5 +1,3 @@
-use crate::fibonacci::fibonacci::fibonacci;
-
 const NUM_DISKS: usize = 3;
 
 fn move_disks(posts: &mut [[usize; NUM_DISKS]; 3],
