@@ -11,14 +11,6 @@ fn move_disks(posts: &mut [[usize; NUM_DISKS]; 3],
     }
 }
 
-fn first_non_zero_pos(posts: &mut [[usize; NUM_DISKS]; 3], post_index: usize) -> usize {
-    let mut i = NUM_DISKS - 1;
-    while (i > 0) && (posts[post_index][i] > 0) {
-        i -= 1;
-    }
-    i
-}
-
 // Move one disk from from_post to to_post.
 fn move_disk(posts: &mut [[usize; NUM_DISKS]; 3], from_post: usize, to_post: usize) {
     draw_posts(posts);
