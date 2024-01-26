@@ -20,7 +20,7 @@ Implementing some classic algorithms in Rust for learning purposes:
 ## References: 
 
 + [Bhargava] Aditya Y. Bhargava. Grokking Algorithms, Second Edition. Manning, 2024.
-+ [Stephens01] Rod Stephens. [Algorithm Projects with Rust: Sorting and Searching](https://www.manning.com/liveproject/sorting-and-searching-rust). Manning.
-+ [Stephens02] Rod Stephens. [Algorithm Projects with Rust: Problem-Solving with Recursion](https://www.manning.com/liveproject/problem-solving-with-recursion-rust). Manning.
-+ [Stephens03] Rod Stephens. [Algorithm Projects with Rust: Public Key Cryptography](https://www.manning.com/liveproject/public-key-cryptography-rust). Manning.
-+ [Stephens04] Rod Stephens. [Algorithm Projects with Rust: Dynamic Programming](https://www.manning.com/liveproject/dynamic-programming-rust). Manning.
++ [Stephens01] Rod Stephens. [Algorithm Projects with Rust: Sorting and Searching](https://www.manning.com/liveproject/sorting-and-searching-rust). Manning, 20023.
++ [Stephens02] Rod Stephens. [Algorithm Projects with Rust: Problem-Solving with Recursion](https://www.manning.com/liveproject/problem-solving-with-recursion-rust). Manning, 2023.
++ [Stephens03] Rod Stephens. [Algorithm Projects with Rust: Public Key Cryptography](https://www.manning.com/liveproject/public-key-cryptography-rust). Manning, 2023.
++ [Stephens04] Rod Stephens. [Algorithm Projects with Rust: Dynamic Programming](https://www.manning.com/liveproject/dynamic-programming-rust). Manning, 2023.
