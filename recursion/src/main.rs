@@ -6,7 +6,7 @@
 
 mod factorial;
 mod fibonacci;
-mod hanoi_towers;
+mod hanoi_tower;
 mod knights_tour;
 mod n_queens;
 
