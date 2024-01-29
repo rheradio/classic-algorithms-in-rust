@@ -153,8 +153,10 @@ pub fn print_items(items: &Vec<Item>, all: bool) {
     println!("==================================================");
     for i in 0..items.len() {
         if items[i].is_selected || all {
-            println!("item {}: value = {}, weight = {}, is_selected = {}",
-                     i, items[i].value, items[i].weight, items[i].is_selected);
+            println!(
+                "item {}: value = {}, weight = {}, is_selected = {}",
+                i, items[i].value, items[i].weight, items[i].is_selected
+            );
         }
         num_printed += 1;
         if num_printed > 100 {
@@ -164,4 +166,3 @@ pub fn print_items(items: &Vec<Item>, all: bool) {
     }
     println!("==================================================");
 }
-

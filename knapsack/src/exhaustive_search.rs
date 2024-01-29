@@ -9,8 +9,11 @@ pub fn exhaustive_search(items: &mut Vec<Item>, allowed_weight: i32) -> (Vec<Ite
     return do_exhaustive_search(items, allowed_weight, 0 as usize);
 }
 
-fn do_exhaustive_search(items: &mut Vec<Item>, allowed_weight: i32, next_index: usize)
-                        -> (Vec<Item>, i32, i32) {
+fn do_exhaustive_search(
+    items: &mut Vec<Item>,
+    allowed_weight: i32,
+    next_index: usize,
+) -> (Vec<Item>, i32, i32) {
     let mut function_calls = 0;
     let next_index = next_index;
     if next_index == items.len() {

@@ -4,7 +4,6 @@ use crate::knapsack_random_generation::*;
 mod exhaustive_search;
 use crate::exhaustive_search::*;
 
-
 use std::time::Instant;
 
 // Run the algorithm. Display the elapsed time and solution.
@@ -58,7 +57,8 @@ fn main() {
     print_items(&items, true);
 
     // // Exhaustive search
-    if NUM_ITEMS > 23 {    // Only run exhaustive search if num_items is small enough.
+    if NUM_ITEMS > 23 {
+        // Only run exhaustive search if num_items is small enough.
         println!("Too many items for exhaustive search\n");
     } else {
         println!("*** Exhaustive Search ***");
