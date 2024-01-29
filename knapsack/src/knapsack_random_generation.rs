@@ -1,7 +1,5 @@
-#[warn(dead_code)]
-#[warn(unused_imports)]
 use std::time::{SystemTime, UNIX_EPOCH};
-pub const NUM_ITEMS: i32 = 20; // A reasonable value for exhaustive search.
+pub const NUM_ITEMS: i32 = 5; // A reasonable value for exhaustive search.
 pub const MIN_VALUE: i32 = 1;
 pub const MAX_VALUE: i32 = 10;
 pub const MIN_WEIGHT: i32 = 4;
@@ -90,7 +88,7 @@ pub fn make_items(
 // The copy_items function makes a copy of a vector of items and
 // returns it. We use this so each algorithm can have its own copy
 // of the items without messing up the vector for any later algorithms
-pub fn copy_items(items: &mut Vec<Item>) -> Vec<Item> {
+pub fn copy_items(items: &Vec<Item>) -> Vec<Item> {
     let mut new_items: Vec<Item> = Vec::with_capacity(items.len());
     for item in items {
         let new_item = Item {
@@ -106,7 +104,7 @@ pub fn copy_items(items: &mut Vec<Item>) -> Vec<Item> {
 // Return the total value of the items.
 // If add_all is true, add up all items.
 // If add_all is false, only add up the selected items.
-pub fn sum_values(items: &mut Vec<Item>, add_all: bool) -> i32 {
+pub fn sum_values(items: &Vec<Item>, add_all: bool) -> i32 {
     if add_all {
         return items.iter().map(|item| item.value).sum();
     } else {
@@ -121,7 +119,7 @@ pub fn sum_values(items: &mut Vec<Item>, add_all: bool) -> i32 {
 // Return the total weight of the items.
 // If add_all is false, only add up the selected items.
 // If add_all is true, add up all items.
-pub fn sum_weights(items: &mut Vec<Item>, add_all: bool) -> i32 {
+pub fn sum_weights(items: &Vec<Item>, add_all: bool) -> i32 {
     if add_all {
         return items.iter().map(|item| item.weight).sum();
     } else {
@@ -135,7 +133,7 @@ pub fn sum_weights(items: &mut Vec<Item>, add_all: bool) -> i32 {
 
 // Return the value of this solution.
 // If the solution is too heavy, return -1 so we prefer an empty solution.
-pub fn solution_value(items: &mut Vec<Item>, allowed_weight: i32) -> i32 {
+pub fn solution_value(items: &Vec<Item>, allowed_weight: i32) -> i32 {
     // If the solution's total weight > allowed_weight,
     // return -1 so even an empty solution is better.
     if sum_weights(items, false) > allowed_weight {
@@ -148,11 +146,15 @@ pub fn solution_value(items: &mut Vec<Item>, allowed_weight: i32) -> i32 {
 
 // Print the selected items.
 // If add_all is true, print all items
-pub fn print_selected(items: &Vec<Item>, all: bool) {
+pub fn print_items(items: &Vec<Item>, all: bool) {
     let mut num_printed = 0;
+    println!("==================================================");
+    println!("= Items ==========================================");
+    println!("==================================================");
     for i in 0..items.len() {
         if items[i].is_selected || all {
-            println!("item {}: value = {}, weight = {}", i, items[i].value, items[i].weight);
+            println!("item {}: value = {}, weight = {}, is_selected = {}",
+                     i, items[i].value, items[i].weight, items[i].is_selected);
         }
         num_printed += 1;
         if num_printed > 100 {
@@ -160,6 +162,6 @@ pub fn print_selected(items: &Vec<Item>, all: bool) {
             return;
         }
     }
-    println!();
+    println!("==================================================");
 }
 

@@ -1,10 +1,11 @@
-#[warn(dead_code)]
-#[warn(unused_imports)]
 mod knapsack_random_generation;
 use crate::knapsack_random_generation::*;
 
+mod exhaustive_search;
+use crate::exhaustive_search::*;
+
+
 use std::time::Instant;
-use std::time::{SystemTime, UNIX_EPOCH};
 
 // Run the algorithm. Display the elapsed time and solution.
 pub fn run_algorithm(
@@ -26,9 +27,9 @@ pub fn run_algorithm(
     let duration = start.elapsed();
     println!("Elapsed: {:?}", duration);
 
-    print_selected(&mut solution, false);
+    print_items(&mut solution, false);
     println!(
-        "Value: {}, Weight: {}, Calls: {}",
+        "Total value: {}, Total weight: {}, #Calls: {}",
         total_value,
         sum_weights(&mut solution, false),
         function_calls
@@ -54,13 +55,13 @@ fn main() {
     println!("Allowed weight: {}", allowed_weight);
     println!();
 
-    print_selected(&items, true);
+    print_items(&items, true);
 
     // // Exhaustive search
-    // if NUM_ITEMS > 23 {    // Only run exhaustive search if num_items is small enough.
-    //     println!("Too many items for exhaustive search\n");
-    // } else {
-    //     println!("*** Exhaustive Search ***");
-    //     run_algorithm(&exhaustive_search, &mut items, allowed_weight);
-    // }
+    if NUM_ITEMS > 23 {    // Only run exhaustive search if num_items is small enough.
+        println!("Too many items for exhaustive search\n");
+    } else {
+        println!("*** Exhaustive Search ***");
+        run_algorithm(&exhaustive_search, &mut items, allowed_weight);
+    }
 }
