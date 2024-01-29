@@ -1,5 +1,5 @@
 use std::time::{SystemTime, UNIX_EPOCH};
-pub const NUM_ITEMS: i32 = 5; // A reasonable value for exhaustive search.
+pub const NUM_ITEMS: i32 = 20; // A reasonable value for exhaustive search.
 pub const MIN_VALUE: i32 = 1;
 pub const MAX_VALUE: i32 = 10;
 pub const MIN_WEIGHT: i32 = 4;
