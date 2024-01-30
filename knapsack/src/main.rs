@@ -1,8 +1,11 @@
 mod knapsack_random_generation;
 use crate::knapsack_random_generation::*;
 
+mod branch_and_bound;
 mod exhaustive_search;
-use crate::exhaustive_search::*;
+
+use crate::branch_and_bound::branch_and_bound;
+use crate::exhaustive_search::exhaustive_search;
 
 use std::time::Instant;
 
@@ -39,6 +42,7 @@ pub fn run_algorithm(
 fn main() {
     // Prepare a Prng using the same seed each time.
     let mut prng = Prng { seed: 1337 };
+    //prng.randomize();
 
     // Make some random items.
     let mut items = make_items(
@@ -57,11 +61,20 @@ fn main() {
     print_items(&items, true);
 
     // // Exhaustive search
+    // if NUM_ITEMS > 23 {
+    //     // Only run exhaustive search if num_items is small enough.
+    //     println!("Too many items for exhaustive search\n");
+    // } else {
+    //     println!("*** Exhaustive Search ***");
+    //     run_algorithm(&exhaustive_search, &mut items, allowed_weight);
+    // }
+
+    // // Exhaustive search
     if NUM_ITEMS > 23 {
         // Only run exhaustive search if num_items is small enough.
-        println!("Too many items for exhaustive search\n");
+        println!("Too many items for branch and boud\n");
     } else {
-        println!("*** Exhaustive Search ***");
-        run_algorithm(&exhaustive_search, &mut items, allowed_weight);
+        println!("*** Branch & Bound ***");
+        run_algorithm(&branch_and_bound, &mut items, allowed_weight);
     }
 }

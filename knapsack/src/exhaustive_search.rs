@@ -5,8 +5,8 @@ use crate::knapsack_random_generation::*;
 // Return the best assignment, value of that assignment,
 // and the number of function calls we made
 pub fn exhaustive_search(items: &mut Vec<Item>, allowed_weight: i32) -> (Vec<Item>, i32, i32) {
-    // (solution, total_value, function_calls)
     return do_exhaustive_search(items, allowed_weight, 0 as usize);
+    // output: (solution, total_value, function_calls)
 }
 
 fn do_exhaustive_search(
@@ -14,13 +14,14 @@ fn do_exhaustive_search(
     allowed_weight: i32,
     next_index: usize,
 ) -> (Vec<Item>, i32, i32) {
-    let next_index = next_index;
     if next_index == items.len() {
+        // Base case
         let copied_items = copy_items(items);
         let solution_value = solution_value(&copied_items, allowed_weight);
         let function_calls = 1;
         return (copied_items, solution_value, function_calls);
     } else {
+        // Recursive case
         items[next_index].is_selected = true;
         let (items_select, solution_value_select, fc_selected) =
             do_exhaustive_search(items, allowed_weight, next_index + 1);
