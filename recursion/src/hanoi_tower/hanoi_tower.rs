@@ -1,3 +1,5 @@
+// Watch https://youtu.be/rf6uf3jNjbo?list=PLpXOY-RxVRTM_-Lvss2ezy1lVl6VUrzW2
+
 const NUM_DISKS: usize = 3;
 
 fn move_disks(posts: &mut [[usize; NUM_DISKS]; 3],
@@ -5,7 +7,7 @@ fn move_disks(posts: &mut [[usize; NUM_DISKS]; 3],
     if num_to_move > 0 {
         move_disks(posts, num_to_move - 1, from_post, temp_post, to_post);
         move_disk(posts, from_post, to_post);
-        move_disks(posts, num_to_move - 1, temp_post, to_post, from_post);
+        move_disks(posts, num_to_move - 1, temp_p<ost, to_post, from_post);
     }
 }
 
