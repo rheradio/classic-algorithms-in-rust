@@ -60,14 +60,14 @@ fn main() {
 
     print_items(&items, true);
 
-    // // Exhaustive search
-    // if NUM_ITEMS > 23 {
-    //     // Only run exhaustive search if num_items is small enough.
-    //     println!("Too many items for exhaustive search\n");
-    // } else {
-    //     println!("*** Exhaustive Search ***");
-    //     run_algorithm(&exhaustive_search, &mut items, allowed_weight);
-    // }
+    // Exhaustive search
+    if NUM_ITEMS > 23 {
+        // Only run exhaustive search if num_items is small enough.
+        println!("Too many items for exhaustive search\n");
+    } else {
+        println!("*** Exhaustive Search ***");
+        run_algorithm(&exhaustive_search, &mut items, allowed_weight);
+    }
 
     // // Exhaustive search
     if NUM_ITEMS > 23 {

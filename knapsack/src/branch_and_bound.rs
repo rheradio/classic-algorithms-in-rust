@@ -32,14 +32,8 @@ fn do_branch_and_bound(
     current_weight: i32,
     remaining_value: i32,
 ) -> (Vec<Item>, i32, i32) {
-
-    print_items(&items, false);
-    println!("next_index = {}, best_value = {}, current_value = {}, current_weight = {}, remaining_value = {}",
-             next_index, best_value, current_value, current_weight, remaining_value);
-
     // Base case
     if next_index == items.len() {
-        println!("We have reach a leaf");
         let copied_items = copy_items(items);
         let solution_value = solution_value(&copied_items, allowed_weight);
         if solution_value > *best_value {
@@ -53,21 +47,18 @@ fn do_branch_and_bound(
 
     // The current branch cannot improve the best_value: stop
     if current_value + remaining_value <= *best_value {
-
-        println!("Stop: current branch cannot improve best_value");
-
-        let empty_vec: Vec<Item> = vec![];
+    let empty_vec: Vec<Item> = vec![];
         let solution_value = 0;
         let function_calls = 1;
         return (empty_vec, solution_value, function_calls);
     }
 
-    let solution_value_select = 0;
-    let items_select: Vec<Item> = vec![];
-    let fc_selected = 1;
+    let mut solution_value_select = 0;
+    let mut items_select: Vec<Item> = vec![];
+    let mut fc_selected = 1;
     if current_weight + items[next_index].weight <= allowed_weight {
         items[next_index].is_selected = true;
-        let (items_select, solution_value_select, fc_selected) = do_branch_and_bound(
+        (items_select, solution_value_select, fc_selected) = do_branch_and_bound(
             items,
             allowed_weight,
             next_index + 1,
@@ -91,9 +82,6 @@ fn do_branch_and_bound(
 
     let function_calls = 1 + //myself
             fc_selected + fc_unselected;
-
-    println!("solution_value_select ={}, solution_value_unselect ={}",
-             solution_value_select, solution_value_unselect);
 
     if solution_value_select > solution_value_unselect {
         return (items_select, solution_value_select, function_calls);
