@@ -47,7 +47,7 @@ fn do_branch_and_bound(
 
     // The current branch cannot improve the best_value: stop
     if current_value + remaining_value <= *best_value {
-    let empty_vec: Vec<Item> = vec![];
+        let empty_vec: Vec<Item> = vec![];
         let solution_value = 0;
         let function_calls = 1;
         return (empty_vec, solution_value, function_calls);

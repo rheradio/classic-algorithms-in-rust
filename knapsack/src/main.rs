@@ -2,9 +2,11 @@ mod knapsack_random_generation;
 use crate::knapsack_random_generation::*;
 
 mod branch_and_bound;
+mod dynamic_programming;
 mod exhaustive_search;
 
 use crate::branch_and_bound::branch_and_bound;
+use crate::dynamic_programming::dynamic_programming;
 use crate::exhaustive_search::exhaustive_search;
 
 use std::time::Instant;
@@ -68,13 +70,12 @@ fn main() {
         println!("*** Exhaustive Search ***");
         run_algorithm(&exhaustive_search, &mut items, allowed_weight);
     }
+    //
+    // // Branch & Bound
+    println!("*** Branch & Bound ***");
+    run_algorithm(&branch_and_bound, &mut items, allowed_weight);
 
-    // // Exhaustive search
-    if NUM_ITEMS > 23 {
-        // Only run exhaustive search if num_items is small enough.
-        println!("Too many items for branch and boud\n");
-    } else {
-        println!("*** Branch & Bound ***");
-        run_algorithm(&branch_and_bound, &mut items, allowed_weight);
-    }
+    // Dynamic programming
+    println!("*** Dynamic programming ***");
+    run_algorithm(&dynamic_programming, &mut items, allowed_weight);
 }
