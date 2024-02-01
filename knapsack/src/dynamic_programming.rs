@@ -18,7 +18,6 @@ fn print_matrix(m: &Vec<Vec<i32>>) {
 // Return the best assignment, value of that assignment,
 // and the number of function calls we made.
 pub fn dynamic_programming(items: &mut Vec<Item>, allowed_weight: i32) -> (Vec<Item>, i32, i32) {
-    //let mut solution_value: Vec<Vec<i32>> =
     let mut solution_value: Vec<Vec<i32>> =
         vec![vec![0; allowed_weight as usize + 1]; NUM_ITEMS_USIZE];
     let mut prev_weight: Vec<Vec<i32>> =
