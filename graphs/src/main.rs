@@ -1,5 +1,8 @@
 mod breadth_first;
+mod depth_first;
+
 use crate::breadth_first::breadth_first;
+use crate::depth_first::depth_first;
 use std::collections::HashMap;
 
 fn main() {
@@ -26,6 +29,9 @@ fn main() {
     graph.insert(String::from("thom"), None);
     graph.insert(String::from("jonny"), None);
 
+    println!("# Breadth-First Search ###########");
     breadth_first(&graph, &String::from("you"));
-    breadth_first(&graph, &String::from("you"));
+
+    println!("# Depth-First Search ###########");
+    depth_first(&graph, &String::from("you"));
 }

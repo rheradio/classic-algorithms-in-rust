@@ -12,7 +12,6 @@ fn push_nodes<'a>(queue: &mut VecDeque<&'a String>, nodes: &'a Option<Vec<String
     }
 }
 pub fn breadth_first(graph: &HashMap<String, Option<Vec<String>>>, start_node: &String) {
-    println!("# Breadth-First Search from {} ###########", start_node);
     let mut queue: VecDeque<&String> = VecDeque::new();
     let mut searched: Vec<&String> = vec![];
     println!("{}", start_node);
